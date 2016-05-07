@@ -10,7 +10,8 @@
 */
 function mdc_target_blank($content) {
 	$post_string = $content;
-	$post_string = str_replace('<a', '<a target="_blank"', $post_string);
+	$post_string = str_replace('<a target="_blank"', '<a', $post_string); // remove existing target="_blank" from <a></a> tags first, if any
+	$post_string = str_replace('<a', '<a target="_blank"', $post_string); // add target="_blank" to every <a></a> tag
 	return $post_string;
 }
 
